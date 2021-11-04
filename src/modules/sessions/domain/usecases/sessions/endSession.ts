@@ -1,13 +1,13 @@
 import { ISessionRepository } from '../../irepositories/isession'
 
-export class BeginSessionUseCase {
+export class EndSessionUseCase {
 	private repository: ISessionRepository
 
 	constructor (repository: ISessionRepository) {
 		this.repository = repository
 	}
 
-	async call (id: string, accepted: boolean) {
-		return await this.repository.accept(id, accepted)
+	async call (id: string) {
+		return await this.repository.end(id)
 	}
 }
