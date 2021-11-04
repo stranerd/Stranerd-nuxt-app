@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { SessionFromModel, SessionToModel } from '../models/session'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface SessionBaseDataSource {
 	create: (data: SessionToModel) => Promise<string>

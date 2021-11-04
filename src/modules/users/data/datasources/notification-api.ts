@@ -1,7 +1,7 @@
-import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
-import { apiBases } from '@utils/environment'
 import { NotificationFromModel } from '../models/notification'
 import { NotificationBaseDataSource } from './notification-base'
+import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
+import { apiBases } from '@utils/environment'
 
 export class NotificationApiDataSource implements NotificationBaseDataSource {
 	private stranerdClient: HttpClient

@@ -1,7 +1,7 @@
-import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
-import { apiBases } from '@utils/environment'
 import { SubjectFromModel, SubjectToModel } from '../models/subject'
 import { SubjectBaseDataSource } from './subject-base'
+import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
+import { apiBases } from '@utils/environment'
 
 export class SubjectApiDataSource implements SubjectBaseDataSource {
 	private stranerdClient: HttpClient

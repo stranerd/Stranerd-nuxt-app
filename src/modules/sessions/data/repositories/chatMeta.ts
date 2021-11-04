@@ -1,8 +1,8 @@
-import { Listeners, QueryParams } from '@modules/core'
 import { ChatMetaBaseDataSource } from '../datasources/chatMeta-base'
 import { ChatMetaTransformer } from '../transformers/chatMeta'
 import { IChatMetaRepository } from '../../domain/irepositories/ichatMeta'
 import { ChatMetaEntity } from '../../domain/entities/chatMeta'
+import { Listeners, QueryParams } from '@modules/core'
 
 export class ChatMetaRepository implements IChatMetaRepository {
 	private dataSource: ChatMetaBaseDataSource

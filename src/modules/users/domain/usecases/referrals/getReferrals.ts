@@ -1,6 +1,6 @@
+import { IReferralRepository } from '../../irepositories/ireferral'
 import { Conditions, QueryParams } from '@modules/core'
 import { PAGINATION_LIMIT } from '@utils/constants'
-import { IReferralRepository } from '../../irepositories/ireferral'
 
 export class GetReferralsUseCase {
 	private repository: IReferralRepository

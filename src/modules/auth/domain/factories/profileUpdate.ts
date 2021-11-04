@@ -1,4 +1,3 @@
-import { BaseFactory, Media } from '@modules/core'
 import {
 	hasLessThanX,
 	isArrayOfX,
@@ -12,8 +11,9 @@ import {
 	isString,
 	isValid
 } from '@stranerd/validate'
-import { UserEntity } from '@modules/users'
 import { UpdateUser } from '../entities/auth'
+import { BaseFactory, Media } from '@modules/core'
+import { UserEntity } from '@modules/users'
 
 type Content = File | Media | undefined
 type Keys = { first: string, last: string, email: string, description: string, avatar: Content, oldPassword: string | undefined, password: string | undefined, cPassword: string | undefined, strongestSubject: string, weakerSubjects: string[] }

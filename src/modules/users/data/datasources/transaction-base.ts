@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { TransactionFromModel } from '../models/transaction'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface TransactionBaseDataSource {
 	find: (userId: string, id: string) => Promise<TransactionFromModel | null>

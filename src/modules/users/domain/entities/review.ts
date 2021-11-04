@@ -1,5 +1,5 @@
-import { BaseEntity } from '@modules/core'
 import { generateDefaultBio, UserBio } from './user'
+import { BaseEntity } from '@modules/core'
 
 export class ReviewEntity extends BaseEntity {
 	public readonly id: string

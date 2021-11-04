@@ -1,7 +1,7 @@
-import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
-import { apiBases } from '@utils/environment'
 import { CommentFromModel, CommentToModel } from '../models/comment'
 import { CommentBaseDataSource } from './comment-base'
+import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
+import { apiBases } from '@utils/environment'
 
 export class CommentApiDataSource implements CommentBaseDataSource {
 	private readonly stranerdClient: HttpClient

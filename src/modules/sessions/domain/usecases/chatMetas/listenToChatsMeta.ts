@@ -1,6 +1,6 @@
-import { Listeners, QueryParams } from '@modules/core'
 import { IChatMetaRepository } from '../../irepositories/ichatMeta'
 import { ChatMetaEntity } from '../../entities/chatMeta'
+import { Listeners, QueryParams } from '@modules/core'
 
 export class ListenToChatsMetaUseCase {
 	private repository: IChatMetaRepository

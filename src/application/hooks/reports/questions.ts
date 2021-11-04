@@ -1,4 +1,5 @@
 import { ssrRef, useFetch } from '@nuxtjs/composition-api'
+import { Alert } from '../core/notifications'
 import {
 	AddQuestionReport,
 	DeleteQuestionReport,
@@ -9,7 +10,6 @@ import {
 } from '@modules/reports'
 import { useErrorHandler, useLoadingHandler, useSuccessHandler } from '@app/hooks/core/states'
 import { useReportModal } from '@app/hooks/core/modals'
-import { Alert } from '../core/notifications'
 
 let reportedEntity = null as string | null
 export const setReportedEntity = (questionId: string) => reportedEntity = questionId

@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import { SessionEntity } from '@modules/sessions'
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
+import { SessionEntity } from '@modules/sessions'
 import { useSession } from '@app/hooks/sessions/sessions'
 
 export default defineComponent({

@@ -1,6 +1,6 @@
+import { RoleBaseDataSource } from '../datasources/role-base'
 import { HttpClient } from '@modules/core'
 import { apiBases, appName } from '@utils/environment'
-import { RoleBaseDataSource } from '../datasources/role-base'
 
 export class RoleApiDataSource implements RoleBaseDataSource {
 	private authClient: HttpClient

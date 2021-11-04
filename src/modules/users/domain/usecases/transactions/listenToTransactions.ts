@@ -1,6 +1,6 @@
-import { Conditions, Listeners, QueryParams } from '@modules/core'
 import { ITransactionRepository } from '../../irepositories/itransaction'
 import { TransactionEntity } from '../../entities/transaction'
+import { Conditions, Listeners, QueryParams } from '@modules/core'
 
 export class ListenToTransactionsUseCase {
 	private repository: ITransactionRepository

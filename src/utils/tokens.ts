@@ -1,7 +1,7 @@
+import { reqSsrRef } from '@nuxtjs/composition-api'
 import { ACCESS_TOKEN_NAME, ACCESS_TOKEN_TTL, REFRESH_TOKEN_NAME, REFRESH_TOKEN_TTL } from '@utils/constants'
 import { isClient } from '@utils/environment'
 import { serializeToCookie } from '@utils/cookie'
-import { reqSsrRef } from '@nuxtjs/composition-api'
 
 type Tokens = {
 	accessToken: string | null

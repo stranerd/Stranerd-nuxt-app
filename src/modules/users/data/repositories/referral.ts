@@ -1,8 +1,8 @@
-import { Listeners, QueryParams } from '@modules/core'
 import { IReferralRepository } from '../../domain/irepositories/ireferral'
 import { ReferralBaseDataSource } from '../datasources/referral-base'
 import { ReferralTransformer } from '../transformers/referral'
 import { ReferralEntity } from '../../domain/entities/referral'
+import { Listeners, QueryParams } from '@modules/core'
 
 export class ReferralRepository implements IReferralRepository {
 	private dataSource: ReferralBaseDataSource

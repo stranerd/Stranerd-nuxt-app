@@ -38,20 +38,20 @@ $font-weight-medium: 600;
 $font-weight-bold: 700;
 
 $theme-colors: (
-	'danger': $color-red,
-	'success': $color-green,
-	'info': #0dcaf0,
-	'warning': #ffc107,
-	'dark': $color-dark,
-	'footer-dark': $color-footer-dark,
-	'primary': $color-primary,
-	'primary-dark': $color-primary-dark,
-	'line': $color-line,
-	'tags': $color-tags,
-	'sub': $color-sub,
-	'gold': $color-gold,
-	'black': $color-black,
-	'white': $color-white
+	"danger": $color-red,
+	"success": $color-green,
+	"info": #0dcaf0,
+	"warning": #ffc107,
+	"dark": $color-dark,
+	"footer-dark": $color-footer-dark,
+	"primary": $color-primary,
+	"primary-dark": $color-primary-dark,
+	"line": $color-line,
+	"tags": $color-tags,
+	"sub": $color-sub,
+	"gold": $color-gold,
+	"black": $color-black,
+	"white": $color-white
 );
 
 $spacer-values: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -61,14 +61,14 @@ $spacers: ();
 	$spacers: map-merge(
 		$spacers,
 		(
-			'#{$key}': #{$key}rem,
-			'#{$key}-25': #{$key + 0.25}rem,
-			'#{$key}-5': #{$key + 0.5}rem,
-			'#{$key}-75': #{$key + 0.75}rem,
-			'n#{$key}': #{0 - $key}rem,
-			'n#{$key}-25': #{0 - 0.25 - $key}rem,
-			'n#{$key}-5': #{0 - 0.5 - $key}rem,
-			'n#{$key}-75': #{0 - 0.75 - $key}rem
+			"#{$key}": #{$key}rem,
+			"#{$key}-25": #{$key + 0.25}rem,
+			"#{$key}-5": #{$key + 0.5}rem,
+			"#{$key}-75": #{$key + 0.75}rem,
+			"n#{$key}": #{0 - $key}rem,
+			"n#{$key}-25": #{0 - 0.25 - $key}rem,
+			"n#{$key}-5": #{0 - 0.5 - $key}rem,
+			"n#{$key}-75": #{0 - 0.75 - $key}rem
 		)
 	);
 }

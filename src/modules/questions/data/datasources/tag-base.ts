@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { TagFromModel } from '../models/tag'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface TagBaseDataSource {
 	find: (id: string) => Promise<TagFromModel | null>

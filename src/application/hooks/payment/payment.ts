@@ -1,9 +1,9 @@
+import { loadStripe } from '@stripe/stripe-js'
 import { BuyCoinsWithStripe, VerifyStripePayment } from '@modules/meta'
 import { useErrorHandler, useLoadingHandler } from '@app/hooks/core/states'
 import { stripeConfig } from '@utils/environment'
 import { usePaymentModal } from '@app/hooks/core/modals'
 import { analytics } from '@modules/core'
-import { loadStripe } from '@stripe/stripe-js'
 import { useAuth } from '@app/hooks/auth/auth'
 
 let props: RawPaymentProps & PaymentData = {

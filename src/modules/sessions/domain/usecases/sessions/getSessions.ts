@@ -1,5 +1,5 @@
-import { Conditions } from '@modules/core'
 import { ISessionRepository } from '../../irepositories/isession'
+import { Conditions } from '@modules/core'
 
 export class GetSessionsUseCase {
 	private repository: ISessionRepository

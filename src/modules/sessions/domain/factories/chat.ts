@@ -1,7 +1,7 @@
-import { BaseFactory, Media } from '@modules/core'
 import { isFile, isLongerThanX, isRequiredIf, isString } from '@stranerd/validate'
 import { ChatToModel } from '../../data/models/chat'
 import { ChatEntity } from '../entities/chat'
+import { BaseFactory, Media } from '@modules/core'
 
 type Content = Media | File | null
 type Keys = { content: string | null, to: string, sessionId: string | null, media: Content | null }

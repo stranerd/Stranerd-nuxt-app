@@ -1,4 +1,5 @@
 import { Ref, ref, ssrRef, useFetch, useRouter } from '@nuxtjs/composition-api'
+import VueRouter from 'vue-router'
 import {
 	AddAnswer,
 	AnswerEntity,
@@ -15,7 +16,6 @@ import { useErrorHandler, useListener, useLoadingHandler, useSuccessHandler } fr
 import { useAuth } from '@app/hooks/auth/auth'
 import { Alert } from '@app/hooks/core/notifications'
 import { analytics } from '@modules/core'
-import VueRouter from 'vue-router'
 
 const global = {} as Record<string, {
 	answers: Ref<AnswerEntity[]>,

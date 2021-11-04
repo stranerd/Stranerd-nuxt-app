@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { TransactionEntity } from '../entities/transaction'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface ITransactionRepository {
 	get: (userId: string, query: QueryParams) => Promise<QueryResults<TransactionEntity>>

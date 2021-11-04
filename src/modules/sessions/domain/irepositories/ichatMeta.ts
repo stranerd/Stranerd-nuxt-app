@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ChatMetaEntity } from '../entities/chatMeta'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface IChatMetaRepository {
 	get: (query: QueryParams) => Promise<QueryResults<ChatMetaEntity>>

@@ -1,8 +1,8 @@
-import { QueryParams } from '@modules/core'
 import { ISubjectRepository } from '../../domain/irepositories/isubject'
 import { SubjectBaseDataSource } from '../datasources/subject-base'
 import { SubjectTransformer } from '../transformers/subject'
 import { SubjectToModel } from '../models/subject'
+import { QueryParams } from '@modules/core'
 
 export class SubjectRepository implements ISubjectRepository {
 	private dataSource: SubjectBaseDataSource

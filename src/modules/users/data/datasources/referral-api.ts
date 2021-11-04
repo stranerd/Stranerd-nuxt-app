@@ -1,7 +1,7 @@
-import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
-import { apiBases } from '@utils/environment'
 import { ReferralFromModel } from '../models/referral'
 import { ReferralBaseDataSource } from './referral-base'
+import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
+import { apiBases } from '@utils/environment'
 
 export class ReferralApiDataSource implements ReferralBaseDataSource {
 	private stranerdClient: HttpClient

@@ -1,6 +1,6 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { AnswerToModel } from '../../data/models/answer'
 import { AnswerEntity } from '../entities/answer'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface IAnswerRepository {
 	add: (data: AnswerToModel) => Promise<string>

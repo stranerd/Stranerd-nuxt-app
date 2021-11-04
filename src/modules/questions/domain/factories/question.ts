@@ -10,10 +10,10 @@ import {
 	isNumber,
 	isString
 } from '@stranerd/validate'
-import { BaseFactory, Media } from '@modules/core'
-import { MAXIMUM_COINS, MINIMUM_COINS } from '@utils/constants'
 import { QuestionEntity } from '../entities/question'
 import { QuestionToModel } from '../../data/models/question'
+import { BaseFactory, Media } from '@modules/core'
+import { MAXIMUM_COINS, MINIMUM_COINS } from '@utils/constants'
 
 type Content = File | Media
 type Keys = {

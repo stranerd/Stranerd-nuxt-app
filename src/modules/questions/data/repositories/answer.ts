@@ -1,9 +1,9 @@
-import { Listeners, QueryParams } from '@modules/core'
 import { IAnswerRepository } from '../../domain/irepositories/ianswer'
 import { AnswerEntity } from '../../domain/entities/answer'
 import { AnswerBaseDataSource } from '../datasources/answer-base'
 import { AnswerTransformer } from '../transformers/answer'
 import { AnswerToModel } from '../models/answer'
+import { Listeners, QueryParams } from '@modules/core'
 
 export class AnswerRepository implements IAnswerRepository {
 	private dataSource: AnswerBaseDataSource

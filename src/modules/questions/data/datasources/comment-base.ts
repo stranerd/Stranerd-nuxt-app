@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { CommentFromModel, CommentToModel } from '../models/comment'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface CommentBaseDataSource {
 	create: (data: CommentToModel) => Promise<string>

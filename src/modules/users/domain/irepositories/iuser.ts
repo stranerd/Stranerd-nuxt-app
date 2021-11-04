@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { UserEntity } from '../entities/user'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface IUserRepository {
 	find: (id: string) => Promise<UserEntity | null>,

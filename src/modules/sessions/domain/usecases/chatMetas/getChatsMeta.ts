@@ -1,5 +1,5 @@
-import { QueryParams } from '@modules/core'
 import { IChatMetaRepository } from '../../irepositories/ichatMeta'
+import { QueryParams } from '@modules/core'
 
 export class GetChatsMetaUseCase {
 	private repository: IChatMetaRepository

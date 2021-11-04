@@ -1,7 +1,7 @@
-import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
-import { apiBases } from '@utils/environment'
 import { ChatMetaFromModel } from '../models/chatMeta'
 import { ChatMetaBaseDataSource } from './chatMeta-base'
+import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
+import { apiBases } from '@utils/environment'
 
 export class ChatMetaApiDataSource implements ChatMetaBaseDataSource {
 	private stranerdClient: HttpClient

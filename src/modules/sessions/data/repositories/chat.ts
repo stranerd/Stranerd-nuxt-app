@@ -1,9 +1,9 @@
-import { Listeners, QueryParams } from '@modules/core'
 import { ChatBaseDataSource } from '../datasources/chat-base'
 import { ChatTransformer } from '../transformers/chat'
 import { IChatRepository } from '../../domain/irepositories/ichat'
 import { ChatToModel } from '../models/chat'
 import { ChatEntity } from '../../domain/entities/chat'
+import { Listeners, QueryParams } from '@modules/core'
 
 export class ChatRepository implements IChatRepository {
 	private dataSource: ChatBaseDataSource

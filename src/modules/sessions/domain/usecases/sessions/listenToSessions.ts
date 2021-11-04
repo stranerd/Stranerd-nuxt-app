@@ -1,6 +1,6 @@
-import { Conditions, Listeners } from '@modules/core'
 import { ISessionRepository } from '../../irepositories/isession'
 import { SessionEntity } from '../../entities/session'
+import { Conditions, Listeners } from '@modules/core'
 
 export class ListenToSessionsUseCase {
 	private repository: ISessionRepository

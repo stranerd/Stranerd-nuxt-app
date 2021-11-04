@@ -1,5 +1,5 @@
-import { BaseFactory } from '@modules/core'
 import { isEmail, isString } from '@stranerd/validate'
+import { BaseFactory } from '@modules/core'
 
 type Keys = { email: string }
 

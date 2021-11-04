@@ -8,8 +8,8 @@
 </template>
 
 <script lang="ts">
-import AccountProfileForm from '@app/components/users/account/AccountProfileForm.vue'
 import { defineComponent, useMeta, useRouter } from '@nuxtjs/composition-api'
+import AccountProfileForm from '@app/components/users/account/AccountProfileForm.vue'
 
 export default defineComponent({
 	name: 'AccountEditPage',

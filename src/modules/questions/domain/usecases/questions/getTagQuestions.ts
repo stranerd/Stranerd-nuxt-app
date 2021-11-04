@@ -1,6 +1,6 @@
+import { IQuestionRepository } from '../../irepositories/iquestion'
 import { Conditions, QueryParams } from '@modules/core'
 import { PAGINATION_LIMIT } from '@utils/constants'
-import { IQuestionRepository } from '../../irepositories/iquestion'
 
 export class GetTagQuestionsUseCase {
 	private repository: IQuestionRepository

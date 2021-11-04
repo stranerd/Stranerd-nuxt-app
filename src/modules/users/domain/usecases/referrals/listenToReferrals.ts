@@ -1,6 +1,6 @@
-import { Conditions, Listeners, QueryParams } from '@modules/core'
 import { IReferralRepository } from '../../irepositories/ireferral'
 import { ReferralEntity } from '../../entities/referral'
+import { Conditions, Listeners, QueryParams } from '@modules/core'
 
 export class ListenToReferralsUseCase {
 	private repository: IReferralRepository

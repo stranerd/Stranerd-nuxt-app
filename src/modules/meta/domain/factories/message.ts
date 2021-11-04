@@ -1,6 +1,6 @@
-import { BaseFactory } from '@modules/core'
 import { isEmail, isLongerThanX, isString } from '@stranerd/validate'
 import { MessageToModel } from '../../data/models/message'
+import { BaseFactory } from '@modules/core'
 
 type Keys = { firstName: string, lastName: string, email: string, message: string }
 

@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ChatFromModel, ChatToModel } from '../models/chat'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface ChatBaseDataSource {
 	create: (path: [string, string], data: ChatToModel) => Promise<string>

@@ -1,6 +1,6 @@
-import { BaseFactory } from '@modules/core'
 import { isEmail, isLongerThanX, isShallowEqualTo, isShorterThanX, isString } from '@stranerd/validate'
 import { AuthUser } from '../entities/auth'
+import { BaseFactory } from '@modules/core'
 
 type Keys = { first: string, last: string, email: string, password: string, cPassword: string }
 

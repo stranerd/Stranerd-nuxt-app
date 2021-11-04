@@ -1,6 +1,6 @@
-import { Conditions, Listeners, QueryParams } from '@modules/core'
 import { IChatRepository } from '../../irepositories/ichat'
 import { ChatEntity } from '../../entities/chat'
+import { Conditions, Listeners, QueryParams } from '@modules/core'
 
 export class ListenToChatsUseCase {
 	private repository: IChatRepository

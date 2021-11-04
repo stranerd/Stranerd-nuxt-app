@@ -1,8 +1,8 @@
-import { Listeners, QueryParams } from '@modules/core'
 import { INotificationRepository } from '../../domain/irepositories/inotification'
 import { NotificationBaseDataSource } from '../datasources/notification-base'
 import { NotificationTransformer } from '../transformers/notification'
 import { NotificationEntity } from '../../domain/entities/notification'
+import { Listeners, QueryParams } from '@modules/core'
 
 export class NotificationRepository implements INotificationRepository {
 	private dataSource: NotificationBaseDataSource

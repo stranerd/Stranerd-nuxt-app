@@ -1,6 +1,6 @@
-import { Listeners } from '@modules/core'
 import { ICommentRepository } from '../../irepositories/icomment'
 import { CommentEntity } from '../../entities/comment'
+import { Listeners } from '@modules/core'
 
 export class ListenToQuestionCommentsUseCase {
 	private repository: ICommentRepository

@@ -1,6 +1,6 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ReviewToModel } from '../../data/models/review'
 import { ReviewEntity } from '../entities/review'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface IReviewRepository {
 	create: (data: ReviewToModel) => Promise<string>

@@ -1,6 +1,6 @@
+import { IAnswerRepository } from '../../irepositories/ianswer'
 import { Conditions, QueryParams } from '@modules/core'
 import { PAGINATION_LIMIT } from '@utils/constants'
-import { IAnswerRepository } from '../../irepositories/ianswer'
 
 export class GetUserAnswersUseCase {
 	private repository: IAnswerRepository

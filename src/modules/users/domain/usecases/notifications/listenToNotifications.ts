@@ -1,6 +1,6 @@
-import { Conditions, Listeners, QueryParams } from '@modules/core'
 import { INotificationRepository } from '../../irepositories/inotification'
 import { NotificationEntity } from '../../entities/notification'
+import { Conditions, Listeners, QueryParams } from '@modules/core'
 
 export class ListenToNotificationsUseCase {
 	private repository: INotificationRepository

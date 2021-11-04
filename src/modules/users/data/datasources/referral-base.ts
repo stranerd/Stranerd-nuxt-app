@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ReferralFromModel } from '../models/referral'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface ReferralBaseDataSource {
 	find: (user: string, id: string) => Promise<ReferralFromModel | null>

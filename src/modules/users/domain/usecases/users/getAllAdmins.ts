@@ -1,5 +1,5 @@
-import { appName } from '@utils/environment'
 import { IUserRepository } from '../../irepositories/iuser'
+import { appName } from '@utils/environment'
 
 export class GetAllAdminsUseCase {
 	private repository: IUserRepository

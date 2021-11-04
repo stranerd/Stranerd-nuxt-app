@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { UserFromModel } from '../models/user'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface UserBaseDataSource {
 	find: (id: string) => Promise<UserFromModel | null>

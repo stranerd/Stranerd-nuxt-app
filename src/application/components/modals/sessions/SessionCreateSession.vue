@@ -25,9 +25,9 @@
 						{{ option.duration }} minutes - {{ option.price }} gold coins
 					</option>
 				</select>
-				<template v-if="!hasEnoughCoins" class="small">
-					<span class="text-danger">You don't have enough gold coins to continue.</span>
-					<a class="ml-half" @click.prevent="buy">Buy More Coins</a>
+				<template v-if="!hasEnoughCoins">
+					<span class="text-danger small">You don't have enough gold coins to continue.</span>
+					<a class="ml-half small" @click.prevent="buy">Buy More Coins</a>
 				</template>
 			</div>
 			<button

@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ReportFromModel, ReportToModel } from '../models/report'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface ReportBaseDataSource {
 	create: (data: ReportToModel) => Promise<string>

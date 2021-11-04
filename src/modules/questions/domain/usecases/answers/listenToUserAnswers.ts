@@ -1,6 +1,6 @@
-import { Conditions, Listeners, QueryParams } from '@modules/core'
 import { IAnswerRepository } from '../../irepositories/ianswer'
 import { AnswerEntity } from '../../entities/answer'
+import { Conditions, Listeners, QueryParams } from '@modules/core'
 
 export class ListenToUserAnswersUseCase {
 	private repository: IAnswerRepository

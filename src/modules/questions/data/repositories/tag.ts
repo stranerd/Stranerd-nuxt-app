@@ -1,7 +1,7 @@
-import { QueryParams } from '@modules/core'
 import { ITagRepository } from '../../domain/irepositories/itag'
 import { TagBaseDataSource } from '../datasources/tag-base'
 import { TagTransformer } from '../transformers/tag'
+import { QueryParams } from '@modules/core'
 
 export class TagRepository implements ITagRepository {
 	private dataSource: TagBaseDataSource

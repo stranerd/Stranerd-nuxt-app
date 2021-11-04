@@ -1,6 +1,6 @@
-import { Conditions, Listeners, QueryParams } from '@modules/core'
 import { IQuestionRepository } from '../../irepositories/iquestion'
 import { QuestionEntity } from '../../entities/question'
+import { Conditions, Listeners, QueryParams } from '@modules/core'
 
 export class ListenToTagQuestionsUseCase {
 	private repository: IQuestionRepository

@@ -1,4 +1,5 @@
 import { computed, ref, Ref, ssrRef, useFetch, useRouter } from '@nuxtjs/composition-api'
+import VueRouter from 'vue-router'
 import {
 	AddQuestion,
 	DeleteQuestion,
@@ -14,7 +15,6 @@ import { useErrorHandler, useListener, useLoadingHandler, useSuccessHandler } fr
 import { COINS_GAP, MAXIMUM_COINS, MINIMUM_COINS } from '@utils/constants'
 import { useAuth } from '@app/hooks/auth/auth'
 import { analytics } from '@modules/core'
-import VueRouter from 'vue-router'
 import { Alert } from '@app/hooks/core/notifications'
 import { useQuestionsModal } from '@app/hooks/core/modals'
 

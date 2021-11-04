@@ -1,6 +1,6 @@
+import { IReviewRepository } from '../../irepositories/ireview'
 import { Conditions, QueryParams } from '@modules/core'
 import { PAGINATION_LIMIT } from '@utils/constants'
-import { IReviewRepository } from '../../irepositories/ireview'
 
 export class GetReviewsUseCase {
 	private repository: IReviewRepository

@@ -1,6 +1,6 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ChatToModel } from '../../data/models/chat'
 import { ChatEntity } from '../entities/chat'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface IChatRepository {
 	add: (path: [string, string], data: ChatToModel) => Promise<string>,

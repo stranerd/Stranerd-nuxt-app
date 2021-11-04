@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { QuestionFromModel, QuestionToModel } from '../models/question'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface QuestionBaseDataSource {
 	create: (data: QuestionToModel) => Promise<string>

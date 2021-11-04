@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { SubjectFromModel, SubjectToModel } from '../models/subject'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface SubjectBaseDataSource {
 	add: (data: SubjectToModel) => Promise<string>

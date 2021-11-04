@@ -1,7 +1,7 @@
+import { getRankImage, RankTypes } from './rank'
 import { BaseEntity, Media } from '@modules/core'
 import { appName } from '@utils/environment'
 import { capitalize, catchDivideByZero, formatNumber } from '@utils/commons'
-import { getRankImage, RankTypes } from './rank'
 
 export class UserEntity extends BaseEntity {
 	public readonly id: string

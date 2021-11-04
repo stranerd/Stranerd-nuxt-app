@@ -16,9 +16,10 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import { useGoogleSignin } from '@app/hooks/auth/signin'
 // @ts-ignore
 import GoogleLogin from 'vue-google-login'
+import { useGoogleSignin } from '@app/hooks/auth/signin'
+// @ts-ignore
 import { googleClientId } from '@utils/environment'
 
 export default defineComponent({

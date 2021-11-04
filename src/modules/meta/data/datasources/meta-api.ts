@@ -1,9 +1,9 @@
+import { MetaBaseDataSource } from './meta-base'
 import { HttpClient, QueryResults } from '@modules/core'
 import { apiBases } from '@utils/environment'
 import { QuestionFromModel } from '@modules/questions/data/models/question'
 import { AnswerFromModel } from '@modules/questions/data/models/answer'
 import { UserFromModel } from '@modules/users/data/models/user'
-import { MetaBaseDataSource } from './meta-base'
 
 export class MetaApiDataSource implements MetaBaseDataSource {
 	private stranerdClient: HttpClient

@@ -19,8 +19,8 @@
 </template>
 
 <script lang="ts">
-import { ReviewEntity } from '@modules/users'
 import { defineComponent, PropType } from '@nuxtjs/composition-api'
+import { ReviewEntity } from '@modules/users'
 import { formatTime } from '@utils/dates'
 import { formatNumber } from '@utils/commons'
 

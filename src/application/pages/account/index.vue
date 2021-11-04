@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import { useAuth } from '@app/hooks/auth/auth'
 import { defineComponent } from '@nuxtjs/composition-api'
+import { useAuth } from '@app/hooks/auth/auth'
 
 export default defineComponent({
 	name: 'AccountIndexPage',

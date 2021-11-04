@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ReviewFromModel, ReviewToModel } from '../models/review'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface ReviewBaseDataSource {
 	create: (data: ReviewToModel) => Promise<string>

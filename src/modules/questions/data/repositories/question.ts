@@ -1,9 +1,9 @@
-import { Listeners, QueryParams } from '@modules/core'
 import { IQuestionRepository } from '../../domain/irepositories/iquestion'
 import { QuestionEntity } from '../../domain/entities/question'
 import { QuestionBaseDataSource } from '../datasources/question-base'
 import { QuestionTransformer } from '../transformers/question'
 import { QuestionToModel } from '../models/question'
+import { Listeners, QueryParams } from '@modules/core'
 
 export class QuestionRepository implements IQuestionRepository {
 	private dataSource: QuestionBaseDataSource

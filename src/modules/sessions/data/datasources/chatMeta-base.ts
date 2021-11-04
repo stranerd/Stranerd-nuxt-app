@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ChatMetaFromModel } from '../models/chatMeta'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface ChatMetaBaseDataSource {
 	find: (id: string) => Promise<ChatMetaFromModel | null>

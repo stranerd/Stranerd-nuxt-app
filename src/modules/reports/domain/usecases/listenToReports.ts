@@ -1,6 +1,6 @@
-import { Conditions, Listeners, QueryParams } from '@modules/core'
 import { IReportRepository } from '../irepositories/ireport'
 import { ReportEntity, ReportType, Type } from '../entities/report'
+import { Conditions, Listeners, QueryParams } from '@modules/core'
 
 export class ListenToReportsUseCase<T extends Type> {
 	private repository: IReportRepository

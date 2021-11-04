@@ -1,6 +1,6 @@
-import { Listeners } from '@modules/core'
 import { IUserRepository } from '../../irepositories/iuser'
 import { UserEntity } from '../../entities/user'
+import { Listeners } from '@modules/core'
 
 export class ListenToUserUseCase {
 	private repository: IUserRepository

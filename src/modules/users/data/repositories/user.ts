@@ -1,8 +1,8 @@
-import { Listeners, QueryParams } from '@modules/core'
 import { IUserRepository } from '../../domain/irepositories/iuser'
 import { UserBaseDataSource } from '../datasources/user-base'
 import { UserTransformer } from '../transformers/user'
 import { UserEntity } from '../../domain/entities/user'
+import { Listeners, QueryParams } from '@modules/core'
 
 export class UserRepository implements IUserRepository {
 	private dataSource: UserBaseDataSource

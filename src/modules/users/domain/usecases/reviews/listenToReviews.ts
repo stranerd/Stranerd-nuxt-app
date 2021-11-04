@@ -1,6 +1,6 @@
-import { Conditions, Listeners, QueryParams } from '@modules/core'
 import { IReviewRepository } from '../../irepositories/ireview'
 import { ReviewEntity } from '../../entities/review'
+import { Conditions, Listeners, QueryParams } from '@modules/core'
 
 export class ListenToReviewsUseCase {
 	private repository: IReviewRepository

@@ -1,7 +1,7 @@
-import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
-import { apiBases } from '@utils/environment'
 import { ChatFromModel, ChatToModel } from '../models/chat'
 import { ChatBaseDataSource } from './chat-base'
+import { HttpClient, Listeners, listenOnSocket, QueryParams, QueryResults } from '@modules/core'
+import { apiBases } from '@utils/environment'
 
 export class ChatApiDataSource implements ChatBaseDataSource {
 	private stranerdClient: HttpClient

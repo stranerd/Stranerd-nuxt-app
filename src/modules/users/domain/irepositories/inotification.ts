@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { NotificationEntity } from '../entities/notification'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface INotificationRepository {
 	find: (userId: string, id: string) => Promise<NotificationEntity | null>

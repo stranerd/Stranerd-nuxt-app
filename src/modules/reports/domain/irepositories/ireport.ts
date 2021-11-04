@@ -1,6 +1,6 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { ReportEntity } from '../entities/report'
 import { ReportToModel } from '../../data/models/report'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface IReportRepository {
 	add: (data: ReportToModel) => Promise<string>,

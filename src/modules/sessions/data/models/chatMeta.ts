@@ -1,5 +1,5 @@
-import { UserBio } from '@modules/users'
 import { ChatFromModel } from './chat'
+import { UserBio } from '@modules/users'
 
 export interface ChatMetaFromModel {
 	id: string

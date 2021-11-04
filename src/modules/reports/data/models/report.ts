@@ -1,5 +1,5 @@
-import { UserBio } from '@modules/users'
 import { ReportType } from '../../domain/entities/report'
+import { UserBio } from '@modules/users'
 
 export interface ReportFromModel extends ReportToModel {
 	id: string

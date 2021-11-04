@@ -1,8 +1,8 @@
-import { Listeners } from '@modules/core'
-import { appName } from '@utils/environment'
 import { IUserRepository } from '../../irepositories/iuser'
 import { UserEntity } from '../../entities/user'
 import { Ranks } from '../../entities/rank'
+import { appName } from '@utils/environment'
+import { Listeners } from '@modules/core'
 
 export class ListenToAllTutorsUseCase {
 	private repository: IUserRepository

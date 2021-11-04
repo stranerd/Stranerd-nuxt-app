@@ -1,6 +1,6 @@
-import { Listeners } from '@modules/core'
 import { IQuestionRepository } from '../../irepositories/iquestion'
 import { QuestionEntity } from '../../entities/question'
+import { Listeners } from '@modules/core'
 
 export class ListenToQuestionUseCase {
 	private repository: IQuestionRepository

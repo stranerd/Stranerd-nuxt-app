@@ -1,6 +1,6 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { SessionToModel } from '../../data/models/session'
 import { SessionEntity } from '../entities/session'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface ISessionRepository {
 	add: (data: SessionToModel) => Promise<string>,

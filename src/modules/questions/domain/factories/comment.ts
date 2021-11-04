@@ -1,7 +1,7 @@
 import { isLongerThanX, isString } from '@stranerd/validate'
-import { BaseFactory } from '@modules/core'
 import { CommentEntity } from '../entities/comment'
 import { CommentToModel } from '../../data/models/comment'
+import { BaseFactory } from '@modules/core'
 
 type Keys = { body: string }
 

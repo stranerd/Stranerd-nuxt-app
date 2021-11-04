@@ -1,5 +1,5 @@
-import { Listeners, QueryParams, QueryResults } from '@modules/core'
 import { NotificationFromModel } from '../models/notification'
+import { Listeners, QueryParams, QueryResults } from '@modules/core'
 
 export interface NotificationBaseDataSource {
 	get: (user: string, query: QueryParams) => Promise<QueryResults<NotificationFromModel>>

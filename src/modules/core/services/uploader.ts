@@ -1,6 +1,6 @@
-import { apiBases } from '@utils/environment'
 import { Media } from '../data/models/base'
 import { HttpClient } from './http'
+import { apiBases } from '@utils/environment'
 
 export const UploaderService = {
 	single: async (path: string, file: File): Promise<Media> => await uploadFile(path, file),
