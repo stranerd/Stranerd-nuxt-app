@@ -1,5 +1,5 @@
 {
-	"name": "nuxt-capacitor-app",
+	"name": "stranerd",
 	"version": "1.0.0",
 	"private": true,
 	"author": "Stranerd Dev",
@@ -10,9 +10,6 @@
 		"generate": "nuxt generate",
 		"build": "yarn generate",
 		"lint": "eslint src/ --ext .ts,.js,.vue --fix && stylelint src/**/*.scss src/**/*.vue --fix",
-		"package:linux": "electron-packager electron/ nuxt-capacitor-app --platform linux --arch x64 --out package/ --overwrite",
-		"deb64": "electron-installer-debian --src package/nuxt-capacitor-app-linux-x64 --dest package/installers/ --arch amd64",
-		"package:window": "electron-packager electron/ app --platform win32 --arch x64 --out package/",
 		"resources:android": "cordova-res-generator -p android,ios && node resources/sync.js android",
 		"resources:ios": "cordova-res-generator -p android,ios && node resources/sync.js ios",
 		"cap:android": "yarn generate && npx cap sync android && npx cap open android",
@@ -21,7 +18,6 @@
 		"env:copy:app": "node bin/copy-env-app"
 	},
 	"dependencies": {
-		"@capacitor-community/electron": "^4.0.3",
 		"@capacitor/android": "3.2.0",
 		"@capacitor/cli": "^3.2.0",
 		"@capacitor/core": "^3.2.0",
@@ -33,8 +29,6 @@
 		"@ionic/vue": "^5.6.14",
 		"@nuxtjs/composition-api": "^0.29.2",
 		"@nuxtjs/pwa": "^3.3.5",
-		"@nuxtjs/robots": "^2.5.0",
-		"@nuxtjs/sitemap": "^2.4.0",
 		"@stranerd/validate": "^1.4.5",
 		"@stripe/stripe-js": "^1.18.0",
 		"@vue-stripe/vue-stripe": "^4.2.5",
@@ -87,9 +81,5 @@
 			"@commitlint/config-conventional"
 		]
 	},
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/stranerd/stranerd/issues"
-	},
-	"homepage": "https://github.com/stranerd/stranerd#readme"
+	"license": "ISC"
 }
