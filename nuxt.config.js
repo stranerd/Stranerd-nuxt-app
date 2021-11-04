@@ -61,6 +61,7 @@ export const components = [
 ]
 
 export const buildModules = [
+	'@nuxtjs/tailwindcss',
 	'@nuxtjs/composition-api/module',
 	'@nuxt/typescript-build',
 	'@nuxtjs/pwa',

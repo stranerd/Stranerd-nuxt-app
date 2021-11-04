@@ -1,8 +1,8 @@
-import config from '../../../nuxt.config'
+import { pwa } from '../../../nuxt.config'
 
 export const state = () => ({
 	appVersion: process.env.version,
-	appName: config.pwa.manifest.short_name || process.env.npm_package_name,
+	appName: pwa.manifest.short_name || process.env.npm_package_name,
 	installAvailable: null,
 	deferredPrompt: null
 })

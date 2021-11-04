@@ -203,4 +203,4 @@ app
 node_modules
 build
 dist
-env.json
+/env.json
