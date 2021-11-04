@@ -5,8 +5,8 @@ import { parseCookie } from '@utils/cookie'
 import { GetAuthUser } from '@modules/auth'
 import { saveTokens } from '@utils/tokens'
 
-export default defineNuxtPlugin(async ({ req, redirect }) => {
-	const cookies = parseCookie(req.headers.cookie ?? '')
+export default defineNuxtPlugin(async ({ redirect }) => {
+	const cookies = parseCookie(document.cookie ?? '')
 	const {
 		[ACCESS_TOKEN_NAME]: accessToken = null,
 		[REFRESH_TOKEN_NAME]: refreshToken = null
