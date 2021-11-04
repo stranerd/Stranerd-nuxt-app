@@ -5,7 +5,7 @@
   "author": "Stranerd",
   "description": "The Stranerd app written in Nuxt",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "yarn env:copy:app && nuxt",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "build": "yarn generate",
@@ -17,7 +17,9 @@
     "resources:android": "cordova-res-generator -p android,ios && node resources/sync.js android",
     "resources:ios": "cordova-res-generator -p android,ios && node resources/sync.js ios",
     "cap:android": "yarn generate && npx cap sync android && npx cap open android",
-    "cap:ios": "yarn generate && npx cap sync ios && npx cap open ios"
+    "cap:ios": "yarn generate && npx cap sync ios && npx cap open ios",
+    "env:copy:example": "copy env.example.json env.json",
+		"env:copy:app": "node bin/copy-env-app"
   },
   "dependencies": {
     "@capacitor-community/electron": "^4.0.3",
@@ -30,32 +32,43 @@
     "@ionic/core": "^5.6.14",
     "@ionic/pwa-elements": "^3.0.2",
     "@ionic/vue": "^5.6.14",
+    "@nuxtjs/composition-api": "^0.29.2",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
+    "@stranerd/validate": "^1.4.5",
+    "@stripe/stripe-js": "^1.18.0",
+    "@vue-stripe/vue-stripe": "^4.2.5",
+    "axios": "^0.21.4",
+    "bootstrap": "^5.1.1",
+    "cookie": "^0.4.1",
     "core-js": "^3.6.5",
+    "firebase": "^9.1.0",
+    "flutterwave-vue-v3": "^1.0.5",
     "nuxt": "^2.15.2",
-		"@nuxtjs/composition-api": "^0.29.2",
-		"@stranerd/validate": "^1.4.5",
-		"@stripe/stripe-js": "^1.18.0",
-		"@vue-stripe/vue-stripe": "^4.2.5",
-		"axios": "^0.21.4",
-		"bootstrap": "^5.1.1",
-		"cookie": "^0.4.1",
-		"firebase": "^9.1.0",
-		"flutterwave-vue-v3": "^1.0.5",
-		"socket.io-client": "^4.2.0",
-		"stripe": "^8.178.0",
-		"sweetalert2": "^11.1.7",
-		"vue": "^2.6.14",
-		"vue-chat-scroll": "^1.4.0",
-		"vue-google-login": "^2.0.5",
-		"vue2-editor": "^2.10.3"
+    "socket.io-client": "^4.2.0",
+    "stripe": "^8.178.0",
+    "sweetalert2": "^11.1.7",
+    "vue": "^2.6.14",
+    "vue-chat-scroll": "^1.4.0",
+    "vue-google-login": "^2.0.5",
+    "vue2-editor": "^2.10.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config": "^6.0.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@types/cookie": "^0.4.1",
+    "@types/vue2-editor": "^2.6.1",
+    "@typescript-eslint/parser": "^4.32.0",
     "babel-eslint": "^10.1.0",
+    "child_process": "^1.0.2",
     "cordova-res-generator": "^0.4.2",
     "electron-installer-debian": "^3.1.0",
     "electron-packager": "^15.1.0",
@@ -63,39 +76,33 @@
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^7.18.0",
     "husky": "^4.3.0",
     "ionicons": "^5.1.2",
+    "node-sass": "^5.0.0",
+    "nuxt-compress": "^5.0.0",
+    "nuxt-purgecss": "^1.0.0",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0",
     "remark-footnotes": "2",
-    "@commitlint/cli": "^13.2.0",
-		"@commitlint/config-conventional": "^13.2.0",
-		"@nuxt/types": "^2.15.8",
-		"@nuxt/typescript-build": "^2.1.0",
-		"@nuxtjs/eslint-config-typescript": "^6.0.1",
-		"@nuxtjs/pwa": "^3.3.5",
-		"@nuxtjs/style-resources": "^1.2.1",
-		"@types/cookie": "^0.4.1",
-		"@types/vue2-editor": "^2.6.1",
-		"@typescript-eslint/parser": "^4.32.0",
-		"child_process": "^1.0.2",
-		"eslint-plugin-vue": "^7.18.0",
-		"node-sass": "^5.0.0",
-		"nuxt-compress": "^5.0.0",
-		"nuxt-purgecss": "^1.0.0",
-		"sass-loader": "^10.2.0",
-		"stylelint": "^13.13.1",
-		"stylelint-config-standard": "^22.0.0",
-		"stylelint-scss": "^3.21.0"
+    "sass-loader": "^10.2.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.21.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint && git add ."
-    }
-  },
-  	"commitlint": {
+	"commitlint": {
 		"extends": [
 			"@commitlint/config-conventional"
 		]
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/stranerd/stranerd.git"
+	},
+	"author": "Kevin Izuchukwu",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/stranerd/stranerd/issues"
+	},
+	"homepage": "https://github.com/stranerd/stranerd#readme"
 }
