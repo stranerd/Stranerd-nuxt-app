@@ -10,7 +10,7 @@
     "generate": "nuxt generate",
     "build": "yarn generate",
     "format": "pretty-quick",
-    "lint": "./node_modules/.bin/eslint --ignore-path .eslintignore . --fix",
+    "lint": "eslint src/ --ext .ts,.js,.vue --fix && stylelint src/**/*.scss src/**/*.vue --fix",
     "package:linux": "electron-packager electron/ nuxt-capacitor-app --platform linux --arch x64 --out package/ --overwrite",
     "deb64": "electron-installer-debian --src package/nuxt-capacitor-app-linux-x64 --dest package/installers/ --arch amd64",
     "package:window": "electron-packager electron/ app --platform win32 --arch x64 --out package/",

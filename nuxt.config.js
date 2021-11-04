@@ -15,7 +15,11 @@ export const head = {
 	meta: [
 		{ charset: 'utf-8' },
 		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-		{ hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+		{
+			hid: 'description',
+			name: 'description',
+			content: process.env.npm_package_description || ''
+		}
 	],
 	link: [
 		{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -27,13 +31,13 @@ export const head = {
 }
 
 export const css = [
-  '@/assets/styles/index.scss',
-  '@/assets/styles/layouts.scss',
-  '@ionic/vue/css/core.css',
-  '@ionic/vue/css/normalize.css',
-  '@ionic/vue/css/structure.css',
-  '@ionic/vue/css/typography.css'
-  ]
+	'@/assets/styles/index.scss',
+	'@/assets/styles/layouts.scss',
+	'@ionic/vue/css/core.css',
+	'@ionic/vue/css/normalize.css',
+	'@ionic/vue/css/structure.css',
+	'@ionic/vue/css/typography.css'
+]
 
 export const styleResources = {
 	scss: ['@/assets/styles/globals.scss']
@@ -44,8 +48,8 @@ export const plugins = [
 	{ mode: 'client', src: '@/plugins/ipAddressGetter' },
 	{ mode: 'client', src: '@/plugins/authClient' },
 	{ mode: 'client', src: '@/plugins/clientScripts' },
-  { src: '~/plugins/capacitor.js' }, 
-  { src: '~/plugins/ionic.js' }
+	{ src: '~/plugins/capacitor.js' },
+	{ src: '~/plugins/ionic.js' }
 ]
 
 export const components = [
@@ -57,8 +61,12 @@ export const components = [
 ]
 
 export const buildModules = [
-	'@nuxtjs/composition-api/module', '@nuxt/typescript-build', '@nuxtjs/pwa',
-	'@nuxtjs/style-resources', 'nuxt-purgecss', 'vue2-editor/nuxt',
+	'@nuxtjs/composition-api/module',
+	'@nuxt/typescript-build',
+	'@nuxtjs/pwa',
+	'@nuxtjs/style-resources',
+	'nuxt-purgecss',
+	'vue2-editor/nuxt',
 	['nuxt-compress', { gzip: { cache: true }, brotli: { threshold: 10240 } }]
 ]
 
@@ -69,7 +77,9 @@ export const generate = { interval: 5000 }
 export const build = {
 	extend: (config) => {
 		const reg = /\.(png|jpe?g|gif|svg|webp|avif)$/i
-		const rule = config.module.rules.find((r) => r.test.toString() === reg.toString())
+		const rule = config.module.rules.find(
+			(r) => r.test.toString() === reg.toString()
+		)
 		if (rule) rule.use[0].options.limit = 1024 * 4
 		config.node = { fs: 'empty' }
 		config.resolve.alias['@app'] = join(__dirname, 'src/application')

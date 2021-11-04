@@ -1,20 +1,67 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    node: true
-  },
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
-  extends: [
-    '@nuxtjs',
-    'prettier',
-    'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended'
-  ],
-  plugins: ['prettier'],
-  // add your custom rules here
-  rules: {}
+	root: true,
+	env: {
+		browser: true,
+		node: true
+	},
+	extends: [
+		'plugin:vue/recommended',
+		'plugin:nuxt/recommended',
+		'@nuxtjs/eslint-config-typescript'
+	],
+	rules: {
+		'vue/no-v-html': 'off',
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+		'no-tabs': 'off',
+		'no-var': 'error',
+		'accessor-pairs': 'off',
+		'no-use-before-define': 'off',
+		indent: ['error', 'tab', { SwitchCase: 1 }],
+		'no-mixed-spaces-and-tabs': ['off', 'smart-tabs'],
+		semi: ['error', 'never'],
+		quotes: ['error', 'single'],
+		'prefer-const': ['error'],
+		'arrow-parens': ['error', 'always'],
+		'no-return-assign': 'off',
+		curly: 'off',
+		'vue/html-indent': ['warn', 'tab', {
+			attribute: 1,
+			baseIndent: 1,
+			closeBracket: 0,
+			alignAttributesVertically: true,
+			ignores: []
+		}],
+		'vue/no-mutating-props': 'off',
+		'object-property-newline': 'off',
+		'require-atomic-updates': 'off',
+		'require-await': 'off',
+		'vue/no-deprecated-slot-attribute': 'off',
+		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/no-non-null-assertion': 'off',
+		'@typescript-eslint/ban-ts-ignore': 'off',
+		'@typescript-eslint/no-var-requires': 'off',
+		'@typescript-eslint/camelcase': 'off',
+		camelcase: 'off',
+		'@typescript-eslint/interface-name-prefix': 'off',
+		'node/no-callback-literal': 'off',
+		'no-empty-function': 'off',
+		'promise/param-names': 'off',
+		'@typescript-eslint/no-empty-function': ['off'],
+		'@typescript-eslint/no-explicit-any': 'off',
+		'import/no-default-export': 'off',
+		'import/default': 'off'
+
+	},
+	overrides: [
+		{
+			files: ['tests/**/*.[jt]s?(x)', 'tests/**/*.spec.[jt]s?(x)'],
+			env: {
+				jest: true
+			}
+		}
+	],
+	ignorePatterns: [
+		'src/application/static/sw.js'
+	]
 }
