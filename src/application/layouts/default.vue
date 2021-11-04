@@ -1,30 +1,29 @@
 <template>
-	<div>
-		<ion-app>
-			<Nuxt />
-		</ion-app>
+	<div class="layout-page">
+		<TopNavigation />
+		<section class="layout-body mb-4">
+			<main class="layout-main">
+				<Nuxt />
+			</main>
+		</section>
+		<MobileBottomNavigation />
+		<ModalBase />
 	</div>
 </template>
 
-<script>
-export default {
-	created () {
-		if (process.browser) {
-			// eslint-disable-next-line nuxt/no-globals-in-created
-			window.addEventListener('beforeinstallprompt', (e) => {
-				// Prevent the mini-infobar from appearing on mobile
-				e.preventDefault()
-				// Stash the event so it can be triggered later.
-				this.$store.commit('createDeferredPrompt', e)
-				// Update UI notify the user they can install the PWA
-				this.$store.commit('checkInstallAvailable', true)
-			})
-			// eslint-disable-next-line nuxt/no-globals-in-created
-			window.addEventListener('appinstalled', () => {
-				this.$store.commit('checkInstallAvailable', false)
-				this.$toast.show('App is installed!')
-			})
-		}
-	}
-}
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+import TopNavigation from '@app/components/layouts/topNavigations/DefaultTopNavigation.vue'
+import MobileBottomNavigation from '@app/components/layouts/bottomNavigations/MobileBottomNavigation.vue'
+
+export default defineComponent({
+	name: 'DefaultLayout',
+	components: { TopNavigation, MobileBottomNavigation }
+})
 </script>
+
+<style lang="scss" scoped>
+	.layout-body {
+		max-width: 1200px;
+	}
+</style>

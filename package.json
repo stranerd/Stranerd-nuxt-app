@@ -71,7 +71,6 @@
   "babel-eslint": "^10.1.0",
   "child_process": "^1.0.2",
   "cordova-res-generator": "^0.4.2",
-  "electron-installer-debian": "^3.1.0",
   "electron-packager": "^15.1.0",
   "eslint": "^7.13.0",
   "eslint-config-prettier": "^6.12.0",

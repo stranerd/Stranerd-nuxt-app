@@ -1,81 +1,74 @@
 <template>
-	<ion-page>
-		<ion-content>
-			<div class="w-full mt-10 h-full flex ">
-				<div class="bg-butter_yellow w-1/2 lg:flex flex-col  items-center justify-center h-full hidden ">
-					<h1 class="text-xl  text-dark_gray font-bold mb-5">
-						Welcome back!
-					</h1>
-					<!-- <img src="@/application/assets/images/auth/signin.png" alt="" class="h-[65%]"> -->
-				</div>
-
-				<div class="flex flex-col items-center justify-center lg:w-1/2 w-full">
-					<h1 class="text-xl text-dark_gray font-bold mb-5 lg:hidden ">
-						Welcome back!
-					</h1>
-					<h1 class="headings lg:text-xl  text-dark_gray font-bold mb-5 text-center">
-						sign In <span class="lg:hidden"> to continue </span>
-					</h1>
-					<div class="h-[65%]">
-						<form
-							@submit.prevent="signin"
-						>
-							<div class="mb-4">
-								<ion-input v-model="factory.email" placeholder="Email Address" type="email" position="floating" :size="24" />
-								<span class="normalText text-red-500 font-semibold">{{ factory.errors.email }}</span>
-							</div>
-							<div class="mb-4">
-								<ion-input v-model="factory.password" placeholder="Password" position="floating" type="password" :size="24" />
-								<span class="normalText text-red-500 font-semibold">{{ factory.errors.password }}</span>
-							</div>
-							<ion-button class="w-full mb-4" :disabled="loading" type="submit">
-								SIGN IN <ion-spinner v-if="loading" name="lines-small" />
-							</ion-button>
-						</form>
-						<div class="w-full flex justify-between items-center  text-dark_gray">
-							<div class="flex justify-between items-center gap-2">
-								<ion-checkbox checked="true" color="primary" mode="ios" />
-								<span class="normalText">Stay signed in</span>
-							</div>
-
-							<router-link to="/auth/Forgot" class="underline normalText">
-								Forgot Password
-							</router-link>
-						</div>
-
-						<div class="flex justify-between px-5 items-center mt-8">
-							<div class="border-faded_gray border-b h-1 w-4/12" />
-							<span class="text-faded_gray">or use</span>
-							<div class="border-faded_gray border-b h-1 w-4/12" />
-						</div>
-
-						<AuthProviders />
-
-						<span class="text- w-full flex justify-center items-center text-icon_inactive mt-8">
-							Don’t have an account?
-
-							<router-link to="/auth/signup" class="text-primary font-bold normalText">
-								Sign Up
-							</router-link>
-
-						</span>
-					</div>
+	<div class="gap-1 gap-md-2 d-flex flex-column">
+		<form class="gap-1 gap-md-2 d-flex flex-column" @submit.prevent="signin">
+			<Heading class="text-center" variant="1">
+				Sign In
+			</Heading>
+			<div>
+				<input
+					id="email"
+					v-model="factory.email"
+					autocomplete="email"
+					class="form-control"
+					name="email"
+					placeholder="Email"
+					required
+					type="email"
+				>
+				<DynamicText v-if="factory.errors.email" class="small text-danger d-block">
+					{{ factory.errors.email }}
+				</DynamicText>
+			</div>
+			<div>
+				<input
+					id="password"
+					v-model="factory.password"
+					autocomplete="password"
+					class="form-control"
+					name="password"
+					placeholder="Password"
+					required
+					type="password"
+				>
+				<DynamicText v-if="factory.errors.password" class="small text-danger d-block">
+					{{ factory.errors.password }}
+				</DynamicText>
+				<div class="text-end mt-1">
+					<NuxtLink class="linkText text-decoration-none" to="/auth/forgot">
+						Forgot Password
+					</NuxtLink>
 				</div>
 			</div>
-		</ion-content>
-	</ion-page>
+			<button :disabled="loading || !factory.valid" class="btn btn-lg btn-custom py-1" type="submit">
+				Sign In
+			</button>
+			<DisplayError :error="error" />
+			<PageLoading v-if="loading" />
+		</form>
+		<div class="d-flex gap-1 align-items-center">
+			<div class="flex-grow-1 border-bottom border-line" style="height: 2px;" />
+			<span>or sign in with</span>
+			<div class="flex-grow-1 border-bottom border-line" style="height: 2px;" />
+		</div>
+		<AuthProviders />
+		<div class="d-flex align-items-center justify-content-center gap-0-25">
+			<span>Not a member yet?</span>
+			<NuxtLink class="linkText" to="/auth/signup">
+				Sign Up
+			</NuxtLink>
+		</div>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent, useMeta } from '@nuxtjs/composition-api'
 import AuthProviders from '@app/components/auth/AuthProviders.vue'
-import { IonContent, IonPage, IonInput, IonButton, IonCheckbox, IonSpinner } from '@ionic/vue'
 import { usePassword } from '@app/hooks/core/forms'
 import { useEmailSignin } from '@app/hooks/auth/signin'
 
 export default defineComponent({
 	name: 'AuthSigninPage',
-	components: { AuthProviders, IonContent, IonPage, IonInput, IonButton, IonCheckbox, IonSpinner },
+	components: { AuthProviders },
 	layout: 'auth',
 	middleware: ['isNotAuthenticated'],
 	setup () {
