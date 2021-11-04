@@ -108,7 +108,6 @@ package/
 *.class
 
 # Generated files
-bin/
 gen/
 out/
 release/

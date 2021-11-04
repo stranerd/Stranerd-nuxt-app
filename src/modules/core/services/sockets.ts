@@ -1,9 +1,10 @@
-import { io, Socket } from 'socket.io-client'
+import io, { Socket } from 'socket.io-client'
 import { getTokens } from '@utils/tokens'
 import { apiBases } from '@utils/environment'
 import { Listeners, StatusCodes } from '@modules/core'
+import { DefaultEventsMap } from 'socket.io-client/build/typed-events'
 
-let socket = null as Socket<any, any> | null
+let socket = null as Socket<DefaultEventsMap, DefaultEventsMap> | null
 const getSocketBaseAndPath = () => {
 	const stranerdBase = apiBases.STRANERD
 	const splitOnDoubleSlash = stranerdBase.split('//')
