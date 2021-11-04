@@ -82,7 +82,7 @@ export const buildModules = [
 
 export const env = { ...process.env }
 
-export const generate = { interval: 5000 }
+export const generate = { interval: 5000, fallback: true }
 
 export const build = {
 	extend: config => {
