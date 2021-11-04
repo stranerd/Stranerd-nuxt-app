@@ -1,188 +1,206 @@
-import { join } from 'path'
+import { join } from "path";
 
-export const srcDir = 'src/application'
+export const srcDir = "src/application";
 
-export const buildDir = 'build'
+export const buildDir = "build";
 
-export const ssr = false
-export const target = 'static'
+export const ssr = false;
+
+export const telemetry = false;
+
+export const server = {
+	port: process.env.PORT ?? 8080,
+	host: "0.0.0.0"
+};
+
+export const target = "static";
 
 export const head = {
-	title: 'Your quick help for homework and study problems…',
+	title: "Your quick help for homework and study problems…",
 	htmlAttrs: {
-		lang: 'en'
+		lang: "en"
 	},
 	meta: [
-		{ charset: 'utf-8' },
-		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+		{ charset: "utf-8" },
+		{ name: "viewport", content: "width=device-width, initial-scale=1" },
 		{
-			hid: 'description',
-			name: 'description',
-			content: process.env.npm_package_description || ''
+			hid: "description",
+			name: "description",
+			content: process.env.npm_package_description || ""
 		}
 	],
 	link: [
-		{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+		{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
 		{
-			rel: 'stylesheet',
-			href: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap'
+			rel: "stylesheet",
+			href:
+				"https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
 		}
 	]
-}
+};
 
 export const css = [
-	'@/assets/styles/index.scss',
-	'@/assets/styles/layouts.scss',
-	'@ionic/vue/css/core.css',
-	'@ionic/vue/css/normalize.css',
-	'@ionic/vue/css/structure.css',
-	'@ionic/vue/css/typography.css'
-]
+	"@/assets/styles/index.scss",
+	"@/assets/styles/layouts.scss",
+	"@ionic/vue/css/core.css",
+	"@ionic/vue/css/normalize.css",
+	"@ionic/vue/css/structure.css",
+	"@ionic/vue/css/typography.css"
+];
 
 export const styleResources = {
-	scss: ['@/assets/styles/globals.scss']
-}
+	scss: ["@/assets/styles/globals.scss"]
+};
 
 export const plugins = [
-	{ mode: 'server', src: '@/plugins/parseLoggedInUser' },
-	{ mode: 'client', src: '@/plugins/ipAddressGetter' },
-	{ mode: 'client', src: '@/plugins/authClient' },
-	{ mode: 'client', src: '@/plugins/clientScripts' },
-	{ src: '~/plugins/capacitor.js' },
-	{ src: '~/plugins/ionic.js' }
-]
+	{ mode: "server", src: "@/plugins/parseLoggedInUser" },
+	{ mode: "client", src: "@/plugins/ipAddressGetter" },
+	{ mode: "client", src: "@/plugins/authClient" },
+	{ mode: "client", src: "@/plugins/clientScripts" },
+	{ src: "~/plugins/capacitor.js" },
+	{ src: "~/plugins/ionic.js" }
+];
 
 export const components = [
-	'@/components',
-	{ path: '@/components/core', level: 0 },
-	{ path: '@/components/core/states', level: 0 },
-	{ path: '@/components/core/modals', level: 0 },
-	{ path: '@/components/core/text', level: 0 }
-]
+	"@/components",
+	{ path: "@/components/core", level: 0 },
+	{ path: "@/components/core/states", level: 0 },
+	{ path: "@/components/core/modals", level: 0 },
+	{ path: "@/components/core/text", level: 0 }
+];
 
 export const buildModules = [
-	'@nuxtjs/tailwindcss',
-	'@nuxtjs/composition-api/module',
-	'@nuxt/typescript-build',
-	'@nuxtjs/pwa',
-	'@nuxtjs/style-resources',
-	'nuxt-purgecss',
-	'vue2-editor/nuxt',
-	['nuxt-compress', { gzip: { cache: true }, brotli: { threshold: 10240 } }]
-]
+	"@nuxtjs/tailwindcss",
+	"@nuxtjs/composition-api/module",
+	"@nuxt/typescript-build",
+	"@nuxtjs/pwa",
+	"@nuxtjs/style-resources",
+	"nuxt-purgecss",
+	"vue2-editor/nuxt",
+	["nuxt-compress", { gzip: { cache: true }, brotli: { threshold: 10240 } }]
+];
 
-export const env = { ...process.env }
+export const env = { ...process.env };
 
-export const generate = { interval: 5000 }
+export const generate = { interval: 5000 };
 
 export const build = {
-	extend: (config) => {
-		const reg = /\.(png|jpe?g|gif|svg|webp|avif)$/i
+	extend: config => {
+		const reg = /\.(png|jpe?g|gif|svg|webp|avif)$/i;
 		const rule = config.module.rules.find(
-			(r) => r.test.toString() === reg.toString()
-		)
-		if (rule) rule.use[0].options.limit = 1024 * 4
-		config.node = { fs: 'empty' }
-		config.resolve.alias['@app'] = join(__dirname, 'src/application')
-		config.resolve.alias['@modules'] = join(__dirname, 'src/modules')
-		config.resolve.alias['@utils'] = join(__dirname, 'src/utils')
+			r => r.test.toString() === reg.toString()
+		);
+		if (rule) rule.use[0].options.limit = 1024 * 4;
+		config.node = { fs: "empty" };
+		config.resolve.alias["@app"] = join(__dirname, "src/application");
+		config.resolve.alias["@modules"] = join(__dirname, "src/modules");
+		config.resolve.alias["@utils"] = join(__dirname, "src/utils");
 	},
-	transpile: ['vue-instantsearch', 'instantsearch.js/es']
-}
+	transpile: ["vue-instantsearch", "instantsearch.js/es"]
+};
 
 export const router = {
-	middleware: ['routeChange']
-}
+	middleware: ["routeChange"]
+};
 
 export const typescript = {
 	typeCheck: {
 		eslint: {
-			files: 'src/**/*.{ts,js,vue}'
+			files: "src/**/*.{ts,js,vue}"
 		}
 	}
-}
+};
 
 export const render = {
 	bundleRenderer: {
 		runInNewContext: false
 	}
-}
+};
 
 export const pwa = {
 	icon: {
-		source: 'src/application/static/images/icon.png'
+		source: "src/application/static/images/icon.png"
 	},
 	meta: {
-		name: 'Your quick help for Maths, Chemistry homework problems',
-		theme_color: '#546dd2',
-		ogHost: 'https://stranerd.com',
-		ogImage: 'https://stranerd.com/images/banner.png',
-		twitterCard: 'https://stranerd.com/images/banner.png',
-		twitterSite: 'https://stranerd.com'
+		name: "Your quick help for Maths, Chemistry homework problems",
+		theme_color: "#546dd2",
+		ogHost: "https://stranerd.com",
+		ogImage: "https://stranerd.com/images/banner.png",
+		twitterCard: "https://stranerd.com/images/banner.png",
+		twitterSite: "https://stranerd.com"
 	},
 	manifest: {
-		start_url: '/dashboard?standalone=true',
-		orientation: 'portrait-primary',
-		categories: ['education', 'tutors', 'books and reference'],
+		start_url: "/dashboard?standalone=true",
+		orientation: "portrait-primary",
+		categories: ["education", "tutors", "books and reference"],
 		shortcuts: [],
 		screenshots: []
 	},
 	workbox: {
 		runtimeCaching: [
 			{
-				urlPattern: 'https://fonts.googleapis.com/*',
-				handler: 'staleWhileRevalidate',
-				strategyOptions: { cacheName: 'fonts-stylesheets' }
+				urlPattern: "https://fonts.googleapis.com/*",
+				handler: "staleWhileRevalidate",
+				strategyOptions: { cacheName: "fonts-stylesheets" }
 			},
 			{
-				urlPattern: 'https://fonts.gstatic.com/*',
-				handler: 'cacheFirst',
-				strategyOptions: { cacheName: 'fonts' },
+				urlPattern: "https://fonts.gstatic.com/*",
+				handler: "cacheFirst",
+				strategyOptions: { cacheName: "fonts" },
 				strategyPlugins: [
 					{
-						use: 'CacheableResponse',
+						use: "CacheableResponse",
 						config: { statuses: [0, 200] }
 					},
 					{
-						use: 'Expiration',
-						config: { maxEntries: 50, maxAgeSeconds: 365 * 24 * 60 * 60 }
+						use: "Expiration",
+						config: {
+							maxEntries: 50,
+							maxAgeSeconds: 365 * 24 * 60 * 60
+						}
 					}
 				]
 			},
 			{
-				urlPattern: 'https://firebasestorage.googleapis.com/*',
-				handler: 'cacheFirst',
-				strategyOptions: { cacheName: 'storage' },
+				urlPattern: "https://firebasestorage.googleapis.com/*",
+				handler: "cacheFirst",
+				strategyOptions: { cacheName: "storage" },
 				strategyPlugins: [
 					{
-						use: 'CacheableResponse',
+						use: "CacheableResponse",
 						config: { statuses: [0, 200] }
 					},
 					{
-						use: 'Expiration',
-						config: { maxEntries: 100, maxAgeSeconds: 14 * 24 * 60 * 60 }
+						use: "Expiration",
+						config: {
+							maxEntries: 100,
+							maxAgeSeconds: 14 * 24 * 60 * 60
+						}
 					}
 				]
 			},
 			{
-				urlPattern: 'https://storage.googleapis.com/*',
-				handler: 'cacheFirst',
-				strategyOptions: { cacheName: 'storage' },
+				urlPattern: "https://storage.googleapis.com/*",
+				handler: "cacheFirst",
+				strategyOptions: { cacheName: "storage" },
 				strategyPlugins: [
 					{
-						use: 'CacheableResponse',
+						use: "CacheableResponse",
 						config: { statuses: [0, 200] }
 					},
 					{
-						use: 'Expiration',
-						config: { maxEntries: 100, maxAgeSeconds: 14 * 24 * 60 * 60 }
+						use: "Expiration",
+						config: {
+							maxEntries: 100,
+							maxAgeSeconds: 14 * 24 * 60 * 60
+						}
 					}
 				]
 			},
 			{
-				urlPattern: 'https://ssl.geoplugin.net/*',
-				handler: 'NetworkOnly'
+				urlPattern: "https://ssl.geoplugin.net/*",
+				handler: "NetworkOnly"
 			}
 		]
 	}
-}
+};

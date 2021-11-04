@@ -1,4 +1,4 @@
-import { io, Socket } from 'socket.io-client'
+import IO, { Socket } from 'socket.io-client'
 import { getTokens } from '@utils/tokens'
 import { apiBases } from '@utils/environment'
 import { Listeners, StatusCodes } from '@modules/core'
@@ -21,7 +21,7 @@ export async function listenOnSocket<Model> (channel: string, listeners: Listene
 	const { accessToken } = await getTokens()
 	// @ts-ignore
 	if (!socket || (!socket.auth.token && accessToken)) {
-		socket = io(getSocketBaseAndPath().domain, {
+		socket = IO(getSocketBaseAndPath().domain, {
 			path: getSocketBaseAndPath().path,
 			auth: {
 				token: accessToken,
